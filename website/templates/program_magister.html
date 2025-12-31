@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .program-hero {
+        background: linear-gradient(135deg, #004a99 0%, #0066cc 100%);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .program-hero h1 { font-size: 2.5rem; font-weight: bold; }
+    .program-hero .tagline { font-size: 1.3rem; font-weight: 300; opacity: 0.95; }
+    
+    .program-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+    }
+    .program-info-box {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #004a99;
+    }
+    .program-info-box .label { font-weight: 600; color: #004a99; font-size: 0.9rem; text-transform: uppercase; }
+    .program-info-box .value { font-size: 1.1rem; font-weight: 500; margin-top: 8px; }
+    
+    .section-title { color: #004a99; font-weight: bold; margin-top: 40px; margin-bottom: 20px; border-bottom: 3px solid #ffcc00; padding-bottom: 10px; }
+    
+    .benefit-card {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .benefit-card h5 { color: #004a99; font-weight: 600; }
+</style>
+
+<div class="program-hero">
+    <div class="container">
+        <h1>Program Magister Kesehatan</h1>
+        <p class="tagline">Advancing Healthcare Leadership and Research.</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="program-info">
+        <div class="program-info-box">
+            <div class="label">Masa Studi</div>
+            <div class="value">±2 tahun (40 SKS)</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Penyampaian</div>
+            <div class="value">Tatap Muka & Daring</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Gelar</div>
+            <div class="value">M.Kes.</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Prasyarat</div>
+            <div class="value">S1/Profesi Kesehatan</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Tentang Program Magister</h2>
+    <p>Program Magister Kesehatan dirancang untuk mengembangkan profesional kesehatan yang memiliki kompetensi tinggi dalam penelitian, manajemen kesehatan, dan pengembangan sumber daya manusia kesehatan. Program ini menawarkan kombinasi kursus teori dan penelitian praktis yang mendalam, mempersiapkan lulusan untuk menjadi pemimpin dalam bidang kesehatan.</p>
+
+    <h2 class="section-title">Konsentrasi Studi</h2>
+    <div class="benefit-card">
+        <h5>Manajemen Rumah Sakit & Layanan Kesehatan</h5>
+        <p>Fokus pada manajemen strategis, operasional, dan finansial rumah sakit serta sistem kesehatan yang komprehensif.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Kesehatan Masyarakat</h5>
+        <p>Mempelajari epidemiologi, promosi kesehatan, dan kebijakan kesehatan publik untuk meningkatkan kesehatan populasi.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Penelitian & Inovasi Kesehatan</h5>
+        <p>Pengembangan keterampilan penelitian untuk menghasilkan inovasi dan solusi masalah kesehatan.</p>
+    </div>
+
+    <h2 class="section-title">Kompetensi Lulusan</h2>
+    <ul>
+        <li>Mampu merancang dan melaksanakan penelitian kesehatan yang berkualitas</li>
+        <li>Mengelola organisasi kesehatan dengan prinsip-prinsip manajemen modern</li>
+        <li>Menganalisis dan merumuskan kebijakan kesehatan</li>
+        <li>Berkontribusi pada pengembangan pendidikan kesehatan</li>
+        <li>Melakukan advokasi kesehatan berbasis bukti ilmiah</li>
+        <li>Menerapkan prinsip-prinsip kepemimpinan dan etika dalam konteks kesehatan</li>
+    </ul>
+
+    <h2 class="section-title">Struktur Kurikulum</h2>
+    <p>Program terdiri dari komponen pembelajaran sebagai berikut:</p>
+    <div class="benefit-card">
+        <h5>Mata Kuliah Wajib</h5>
+        <p>Matakuliah inti yang memberikan dasar pengetahuan dalam metodologi penelitian, epidemiologi, biostatistik, dan etika penelitian.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Mata Kuliah Pilihan</h5>
+        <p>Matakuliah sesuai konsentrasi studi untuk pendalaman keahlian spesifik.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Tesis/Skripsi</h5>
+        <p>Penelitian mandiri yang menghasilkan kontribusi ilmiah dalam bidang kesehatan.</p>
+    </div>
+
+    <h2 class="section-title">Peluang Karier Lulusan</h2>
+    <ul>
+        <li>Direktur atau Manajer Rumah Sakit</li>
+        <li>Peneliti di Lembaga Penelitian Kesehatan</li>
+        <li>Pejabat Kesehatan di Pemerintah (Pusat/Daerah)</li>
+        <li>Dosen/Peneliti di Institusi Pendidikan</li>
+        <li>Konsultan Kesehatan</li>
+        <li>Manajer Program Kesehatan di Organisasi Internasional</li>
+        <li>Pengusaha di Industri Kesehatan</li>
+    </ul>
+</div>
+
+{% endblock %}

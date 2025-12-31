@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .program-hero {
+        background: linear-gradient(135deg, #004a99 0%, #0066cc 100%);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .program-hero h1 { font-size: 2.5rem; font-weight: bold; }
+    .program-hero .tagline { font-size: 1.3rem; font-weight: 300; opacity: 0.95; }
+    
+    .program-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+    }
+    .program-info-box {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #004a99;
+    }
+    .program-info-box .label { font-weight: 600; color: #004a99; font-size: 0.9rem; text-transform: uppercase; }
+    .program-info-box .value { font-size: 1.1rem; font-weight: 500; margin-top: 8px; }
+    
+    .section-title { color: #004a99; font-weight: bold; margin-top: 40px; margin-bottom: 20px; border-bottom: 3px solid #ffcc00; padding-bottom: 10px; }
+    
+    .benefit-card {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .benefit-card h5 { color: #004a99; font-weight: 600; }
+</style>
+
+<div class="program-hero">
+    <div class="container">
+        <h1>Program Profesi Dokter</h1>
+        <p class="tagline">Membangun Dokter Profesional dan Berakhlak.</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="program-info">
+        <div class="program-info-box">
+            <div class="label">Masa Studi</div>
+            <div class="value">±3 tahun</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Penyampaian</div>
+            <div class="value">Tatap Muka & Praktik Klinik</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Gelar</div>
+            <div class="value">dr.</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Prasyarat</div>
+            <div class="value">S.Ked. atau setara</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Tentang Program Profesi Dokter</h2>
+    <p>Program Profesi Dokter adalah lanjutan dari Program Sarjana Kedokteran yang dirancang untuk mempersiapkan mahasiswa menjadi dokter yang kompeten dan siap untuk praktik klinis. Program ini menekankan pada pengalaman langsung melalui rotasi klinis di berbagai departemen dan fasilitas kesehatan terkait. Mahasiswa akan mengembangkan keterampilan klinis, komunikasi, dan etika medis yang kuat.</p>
+
+    <h2 class="section-title">Struktur Program</h2>
+    <div class="benefit-card">
+        <h5>Tahun Pertama: Klinik Preklinik</h5>
+        <p>Pendalaman ilmu klinik dasar dengan pelatihan laboratorium dan skills lab yang intensif.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Tahun Kedua: Rotasi Klinik Utama</h5>
+        <p>Rotasi di departemen utama seperti Penyakit Dalam, Bedah, Obstetri & Ginekologi, Pediatri, dan Neurologi.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Tahun Ketiga: Rotasi Klinik Lanjutan</h5>
+        <p>Rotasi di departemen subspesialistik dan fasilitas kesehatan primer untuk pengalaman holistik.</p>
+    </div>
+
+    <h2 class="section-title">Kompetensi Lulusan</h2>
+    <ul>
+        <li>Mampu melakukan anamnesis dan pemeriksaan fisik dengan komprehensif</li>
+        <li>Mendiagnosis penyakit dan merencanakan terapi yang tepat</li>
+        <li>Melaksanakan prosedur medis dasar dengan aman</li>
+        <li>Berkomunikasi efektif dengan pasien dan keluarga</li>
+        <li>Menerapkan etika dan hukum medis dalam praktik</li>
+        <li>Melakukan kolaborasi interprofesional dalam tim kesehatan</li>
+    </ul>
+
+    <h2 class="section-title">Fasilitas Pendidikan</h2>
+    <div class="benefit-card">
+        <h5>Rumah Sakit Pendidikan</h5>
+        <p>Akses ke rumah sakit jejaring dengan standar pendidikan yang tinggi untuk pengalaman klinis optimal.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Laboratorium Klinik</h5>
+        <p>Fasilitas laboratorium modern untuk pemeriksaan diagnostik dan pelatihan praktik.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Skills Training Center</h5>
+        <p>Pusat pelatihan keterampilan dengan simulator dan peralatan medis untuk latihan prosedur sebelum praktik langsung.</p>
+    </div>
+</div>
+
+{% endblock %}

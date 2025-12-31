@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .program-hero {
+        background: linear-gradient(135deg, #004a99 0%, #0066cc 100%);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .program-hero h1 { font-size: 2.5rem; font-weight: bold; }
+    .program-hero .tagline { font-size: 1.3rem; font-weight: 300; opacity: 0.95; }
+    
+    .program-info {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 40px 0;
+    }
+    .program-info-box {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #004a99;
+    }
+    .program-info-box .label { font-weight: 600; color: #004a99; font-size: 0.9rem; text-transform: uppercase; }
+    .program-info-box .value { font-size: 1.1rem; font-weight: 500; margin-top: 8px; }
+    
+    .section-title { color: #004a99; font-weight: bold; margin-top: 40px; margin-bottom: 20px; border-bottom: 3px solid #ffcc00; padding-bottom: 10px; }
+    
+    .benefit-card {
+        background: white;
+        padding: 20px;
+        margin: 15px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .benefit-card h5 { color: #004a99; font-weight: 600; }
+    
+    .curriculum-table {
+        margin: 20px 0;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    .curriculum-table th {
+        background-color: #004a99;
+        color: white;
+        padding: 12px;
+        text-align: left;
+    }
+    .curriculum-table td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+    }
+</style>
+
+<div class="program-hero">
+    <div class="container">
+        <h1>Sarjana Kedokteran</h1>
+        <p class="tagline">Science that saves lives.</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="program-info">
+        <div class="program-info-box">
+            <div class="label">Masa Studi</div>
+            <div class="value">±4 tahun (148 SKS)</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Penyampaian</div>
+            <div class="value">Tatap Muka & Daring</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Gelar</div>
+            <div class="value">S.Ked.</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Bahasa</div>
+            <div class="value">Bahasa Indonesia</div>
+        </div>
+        <div class="program-info-box">
+            <div class="label">Estimasi Biaya</div>
+            <div class="value">±Rp350.000.000</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Yang Kamu Pelajari di Kedokteran</h2>
+    <p>Program Studi Kedokteran bertujuan untuk mempersiapkan mahasiswa untuk menjadi dokter yang berkualitas. Di Kedokteran, kamu akan belajar anatomi dan fisiologi, biokimia, patologi, farmakologi, mikrobiologi, kardiologi, gastroenterologi, hematologi, onkologi, dan kedokteran forensik. Kedokteran merupakan bidang ilmu yang berkaitan dengan kebutuhan kesehatan yang selalu dibutuhkan kapan pun dan di mana pun. Ditinjau dari lapangan pekerjaan, dokter adalah salah satu profesi yang sangat dibutuhkan dan memiliki prospek kerja dengan daya serap yang tinggi baik di masa sekarang ataupun masa yang akan datang.</p>
+
+    <h2 class="section-title">Alasan Memilih UMS untuk Belajar Kedokteran</h2>
+    <div class="benefit-card">
+        <h5>Akreditasi Nasional</h5>
+        <p>Program studi ini telah terakreditasi "Unggul" oleh Lembaga Akreditasi Mandiri Pendidikan Tinggi Kesehatan Indonesia (LAM-PTKes).</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Fasilitas Lengkap</h5>
+        <p>Mahasiswa yang belajar Kedokteran di UMS akan mendapatkan berbagai ilmu dan fasilitas yang lengkap, di antaranya adalah Laboratorium Biomedik, Laboratorium Skill, MMPI Centre, dan ruang CBT mandiri.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Ilmu Komprehensif</h5>
+        <p>Keilmuan yang diajarkan meliputi bidang praklinik, klinik, medical education, public health dan keislaman yang dapat meningkatkan kompetensi mahasiswa secara komprehensif.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Kolaborasi Pendidikan</h5>
+        <p>Bidang ilmu sains teknologi dengan keislaman diharapkan mampu mencetak lulusan dokter yang profesional dan berakhlaqul kharimah.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Ruang Laboratorium Lengkap</h5>
+        <p>Program Studi Kedokteran dilengkapi ruang laboratorium lengkap yang terdiri dari: Laboratorium Biomedik, Laboratorium Skill, MMPI Centre, dan ruang CBT mandiri.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Pendidikan Karakter</h5>
+        <p>Program Studi Kedokteran memiliki keunggulan dalam bidang kedokteran keluarga yang mengintegrasikan nilai-nilai keislaman dalam pembelajarannya.</p>
+    </div>
+    <div class="benefit-card">
+        <h5>Tenaga Pengajar Mumpuni</h5>
+        <p>Program Studi Kedokteran memiliki tenaga pengajar yang mumpuni di bidang Kedokteran Praklinik, Klinik, Medical Education, dan Public Health.</p>
+    </div>
+
+    <h2 class="section-title">Yang Kamu Dapatkan Setelah Lulus</h2>
+    <p>Program Studi Kedokteran UMS dapat mengembangkan mahasiswanya untuk dapat melaksanakan praktik kedokteran yang profesional sesuai dengan nilai dan prinsip ketuhanan, moral luhur, etika, disiplin, hukum, dan sosial budaya. Salah satunya adalah keterampilan praktik kedokteran dengan menyadari keterbatasan, mengatasi masalah personal, mengembangkan diri, mengikuti penyegaran dan peningkatan pengetahuan secara berkesinambungan serta mengembangkan pengetahuan demi keselamatan pasien.</p>
+
+    <h2 class="section-title">Peluang Karier</h2>
+    <p>Seorang Sarjana Kedokteran memiliki peluang karier sebagai:</p>
+    <ul>
+        <li>Dokter Umum</li>
+        <li>Dokter Spesialis</li>
+        <li>Manajer Faskes</li>
+        <li>Manajer di Lembaga Kesehatan Nasional</li>
+        <li>Pemilik Klinik</li>
+        <li>PNS/ASN</li>
+        <li>Dosen</li>
+        <li>Peneliti</li>
+    </ul>
+
+    <h2 class="section-title">Kurikulum</h2>
+    <p>Berikut merupakan detail mata kuliah yang akan dipelajari di prodi Kedokteran UMS:</p>
+    <table class="curriculum-table">
+        <thead>
+            <tr>
+                <th>Semester</th>
+                <th>Kode</th>
+                <th>Mata Kuliah</th>
+                <th>SKS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="7">1</td>
+                <td>FK122</td>
+                <td>Pancasila</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>FK132</td>
+                <td>English for Academic Purpose</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>FK142</td>
+                <td>Learning Skill & Information Technology</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>FK156</td>
+                <td>Premedical Science in Homeostatic Setting I</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>FK166</td>
+                <td>Premedical Science in Homeostatic Setting II</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>FK171</td>
+                <td>Skills lab I</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>FK112</td>
+                <td>Islamic Study</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

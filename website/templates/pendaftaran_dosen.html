@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .pendaftaran-hero {
+        background: linear-gradient(135deg, #004a99 0%, #0066cc 100%);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .pendaftaran-hero h1 { font-size: 2.5rem; font-weight: bold; }
+    .pendaftaran-hero p { font-size: 1.1rem; opacity: 0.95; }
+    
+    .form-section {
+        background: #f8f9fa;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin: 30px 0;
+    }
+    
+    .form-section h3 {
+        color: #004a99;
+        font-weight: bold;
+        margin-bottom: 30px;
+        border-bottom: 3px solid #ffcc00;
+        padding-bottom: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        color: #004a99;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        padding: 10px 12px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        border-color: #004a99;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0,74,153,0.1);
+    }
+    
+    .btn-submit {
+        background-color: #004a99;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .btn-submit:hover {
+        background-color: #003d7a;
+    }
+    
+    .info-box {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ffcc00;
+        margin: 20px 0;
+    }
+    
+    .info-box strong { color: #004a99; }
+</style>
+
+<div class="pendaftaran-hero">
+    <div class="container">
+        <h1>Pendaftaran Dosen</h1>
+        <p>Bergabunglah dengan tim pengajar profesional Fakultas Kedokteran UMS</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="info-box">
+        <strong>📌 Informasi Penting:</strong><br>
+        Terima kasih atas minat Anda untuk bergabung dengan Fakultas Kedokteran UMS. Silakan isi formulir di bawah dengan data lengkap dan akurat. Tim kami akan menghubungi Anda untuk proses selanjutnya.
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <form class="form-section" method="POST">
+                {% csrf_token %}
+                <h3>📝 Form Pendaftaran Dosen</h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" name="nama" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="telepon">Nomor Telepon *</label>
+                            <input type="tel" id="telepon" name="telepon" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="gelar_akademik">Gelar Akademik Tertinggi *</label>
+                            <select id="gelar_akademik" name="gelar_akademik" required>
+                                <option value="">-- Pilih Gelar --</option>
+                                <option value="S1">S1</option>
+                                <option value="S2">S2 (Master)</option>
+                                <option value="S3">S3 (Doktor)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="bidang_keahlian">Bidang Keahlian/Spesialisasi *</label>
+                    <input type="text" id="bidang_keahlian" name="bidang_keahlian" placeholder="Contoh: Kardiologi, Bedah Umum, dll" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pengalaman">Pengalaman Kerja (tahun) *</label>
+                    <input type="number" id="pengalaman" name="pengalaman" placeholder="Contoh: 5" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="institusi_sebelumnya">Institusi Sebelumnya</label>
+                    <input type="text" id="institusi_sebelumnya" name="institusi_sebelumnya" placeholder="Opsional">
+                </div>
+
+                <div class="form-group">
+                    <label for="cv_file">Upload CV (PDF/Doc) *</label>
+                    <input type="file" id="cv_file" name="cv_file" accept=".pdf,.doc,.docx" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan/Pernyataan Motivasi</label>
+                    <textarea id="pesan" name="pesan" rows="4" placeholder="Mengapa Anda tertarik bergabung dengan FK UMS?"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">✓ Kirim Pendaftaran</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <strong>Pertanyaan?</strong><br>
+        Hubungi kami di: <strong>kedokteran@ums.ac.id</strong> atau <strong>0857-1682-3315</strong>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .pendaftaran-hero {
+        background: linear-gradient(135deg, #004a99 0%, #0066cc 100%);
+        color: white;
+        padding: 60px 0;
+        text-align: center;
+    }
+    .pendaftaran-hero h1 { font-size: 2.5rem; font-weight: bold; }
+    .pendaftaran-hero p { font-size: 1.1rem; opacity: 0.95; }
+    
+    .form-section {
+        background: #f8f9fa;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin: 30px 0;
+    }
+    
+    .form-section h3 {
+        color: #004a99;
+        font-weight: bold;
+        margin-bottom: 30px;
+        border-bottom: 3px solid #ffcc00;
+        padding-bottom: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        color: #004a99;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        padding: 10px 12px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        border-color: #004a99;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0,74,153,0.1);
+    }
+    
+    .btn-submit {
+        background-color: #004a99;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .btn-submit:hover {
+        background-color: #003d7a;
+    }
+    
+    .info-box {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        border-left: 4px solid #ffcc00;
+        margin: 20px 0;
+    }
+    
+    .info-box strong { color: #004a99; }
+</style>
+
+<div class="pendaftaran-hero">
+    <div class="container">
+        <h1>Pendaftaran Mahasiswa</h1>
+        <p>Daftar sebagai mahasiswa baru Fakultas Kedokteran UMS</p>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="info-box">
+        <strong>📌 Informasi Penting:</strong><br>
+        Pendaftaran mahasiswa baru Fakultas Kedokteran UMS dibuka untuk program Sarjana Kedokteran, Profesi Dokter, dan Magister Kesehatan. Silakan isi formulir di bawah dengan data lengkap dan akurat. Anda akan menerima konfirmasi melalui email.
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <form class="form-section" method="POST">
+                {% csrf_token %}
+                <h3>📝 Form Pendaftaran Mahasiswa</h3>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap *</label>
+                            <input type="text" id="nama" name="nama" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="telepon">Nomor Telepon/WhatsApp *</label>
+                            <input type="tel" id="telepon" name="telepon" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="ttl">Tanggal Lahir *</label>
+                            <input type="date" id="ttl" name="ttl" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="alamat">Alamat Lengkap *</label>
+                    <textarea id="alamat" name="alamat" rows="3" required></textarea>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="asal_sekolah">Asal Sekolah/Perguruan Tinggi *</label>
+                            <input type="text" id="asal_sekolah" name="asal_sekolah" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="tahun_lulus">Tahun Lulus *</label>
+                            <input type="number" id="tahun_lulus" name="tahun_lulus" min="2000" max="2025" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="program">Program Pilihan *</label>
+                    <select id="program" name="program" required>
+                        <option value="">-- Pilih Program --</option>
+                        <option value="sarjana">Sarjana Kedokteran (S.Ked.)</option>
+                        <option value="profesi">Profesi Dokter (dr.)</option>
+                        <option value="magister">Magister Kesehatan (M.Kes.)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivasi">Motivasi Belajar Kedokteran</label>
+                    <textarea id="motivasi" name="motivasi" rows="4" placeholder="Jelaskan mengapa Anda ingin belajar di Fakultas Kedokteran UMS..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="berkas">Upload Dokumen Pendukung (PDF)</label>
+                    <input type="file" id="berkas" name="berkas" accept=".pdf" help-text="Scan ijazah/transkip nilai">
+                </div>
+
+                <button type="submit" class="btn-submit">✓ Daftar Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <strong>📌 Persyaratan Tambahan:</strong><br>
+        - Ijazah/Transkip nilai (untuk pendaftar Program Profesi dan Magister)<br>
+        - Sertifikat kesehatan (jika diminta)<br>
+        - Pas foto ukuran 4x6 (digital)<br>
+        <br>
+        <strong>Hubungi Kami:</strong> <strong>kedokteran@ums.ac.id</strong> | <strong>0857-1682-3315</strong>
+    </div>
+</div>
+
+{% endblock %}
