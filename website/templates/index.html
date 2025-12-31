@@ -66,18 +66,13 @@
         <h3 class="fw-bold mb-3 text-ums">Galeri Foto</h3>
         <div class="photo-collage__viewport">
             <div class="photo-collage__track">
-                <div class="photo-collage__item"><img src="/media/asset/gambar1.jpg" alt="foto1"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar2.jpg" alt="foto2"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar3.jpg" alt="foto3"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar4.jpg" alt="foto4"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar5.webp" alt="foto5"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar6.jpg" alt="foto6"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar1.jpg" alt="foto1"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar2.jpg" alt="foto2"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar3.jpg" alt="foto3"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar4.jpg" alt="foto4"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar5.webp" alt="foto5"></div>
-                <div class="photo-collage__item"><img src="/media/asset/gambar6.jpg" alt="foto6"></div>
+                {% for foto in fotos %}
+                <div class="photo-collage__item"><img src="{{ foto.gambar.url }}" alt="{{ foto.nama }}"></div>
+                {% endfor %}
+                <!-- Repeat untuk looping seamless -->
+                {% for foto in fotos %}
+                <div class="photo-collage__item"><img src="{{ foto.gambar.url }}" alt="{{ foto.nama }}"></div>
+                {% endfor %}
             </div>
         </div>
     </div>
