@@ -23,5 +23,17 @@ class Dosen(models.Model):
 
     class Meta:
         verbose_name_plural = "Dosen"
+
+class PhotoCollage(models.Model):
+    nama = models.CharField(max_length=100, default="Foto Galeri")
+    gambar = models.ImageField(upload_to='asset/')
+    urutan = models.IntegerField(default=0, help_text="Urutan tampil di galeri")
+    
+    def __str__(self):
+        return f"{self.nama} ({self.id})"
+    
+    class Meta:
+        verbose_name_plural = "Photo Collage"
+        ordering = ['urutan']
     
     

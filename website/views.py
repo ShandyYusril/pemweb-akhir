@@ -1,13 +1,15 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Berita, Dosen
+from .models import Berita, Dosen, PhotoCollage
 
 def index(request):
     berita_list = Berita.objects.all().order_by('-tanggal')[:3]
     dosen_list = Dosen.objects.all()
+    fotos = PhotoCollage.objects.all()
     
     context = {
         'berita': berita_list,
         'dosen': dosen_list,
+        'fotos': fotos,
     }
     return render(request, 'index.html', context)
 
